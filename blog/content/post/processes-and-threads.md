@@ -69,37 +69,28 @@ dispatcher -->
 
 ## Process Model
 
-<!-- // TODO: 
--> One program counter
+| One Program Counter | Four Program Counter | Process-Time Diagram |
+|:--------------------|:--------------------:|:--------------------:|
+|![](Screenshot from 2020-02-19 17-30-08.png)|![](Screenshot from 2020-02-19 17-30-15.png)|![](Screenshot from 2020-02-19 17-30-21.png)|
 
--> Four Program counter
+Uniprocessor -> Only one program can be active at any time
 
--> Process time diagram
-A |
-B |
-C |
-D |_________
-     Time -->
-
-Uniprocessor -> Only one program can be active at any instant
-
-* One Process One Thread - MS-DOS
-* One Process Multiple Threads - OS/161
-* Multiple Processes One Thread - Traditional UNIX
-* Multiple Processes Multiple Threads - Current major operating systems
+* One Process One Thread - e.g. MS-DOS
+* One Process Multiple Threads - e.g. OS/161
+* Multiple Processes One Thread - e.g. Traditional UNIX
+* Multiple Processes Multiple Threads - i.e. Current major operating systems
 
 # Process Creation
 
 Foreground - Interactive
-Background - services / daemons
+Background - Services / Daemons
 
 ---
 
 # Process Control Block
 
 The PCB is a structure which holds the information related to a process.  
-<!-- For example its PID 
-// TODO:  -->
+For example its PID, signals, registers, program counter, stack pointer, state, priority, working directory, file descriptors, etc...
 
 The process table is an array (of sorts) of PCBs.
 
