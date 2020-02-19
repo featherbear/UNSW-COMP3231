@@ -1,0 +1,82 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>OS/161 - A First Glance - COMP3231 Musings</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content=no-transform><meta http-equiv=cache-control content=no-siteapp><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=author content=z5206677><meta name=description content="The OS/161 Kit  OS/161 System/161 Development Tools  OS/161 OS/161 is the kernel and software suite that is developed on for this course."><meta name=keywords content=Hugo,theme,even><meta name=generator content="Hugo 0.58.2 with theme even"><link rel=canonical href=../../post/os161/><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=../../favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=../../favicon-16x16.png><link rel=manifest href=../../manifest.json><link rel=mask-icon href=../../safari-pinned-tab.svg color=#5bbad5><link href=../../dist/even.c2a46f00.min.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><link rel=stylesheet href=../../css/typedjs.shortcode.css><meta property=og:title content="OS/161 - A First Glance"><meta property=og:description content="The OS/161 Kit  OS/161 System/161 Development Tools  OS/161 OS/161 is the kernel and software suite that is developed on for this course."><meta property=og:type content=article><meta property=og:url content=/post/os161/><meta property=article:published_time content=2020-02-19T17:35:55+11:00><meta property=article:modified_time content=2020-02-19T17:35:55+11:00><meta itemprop=name content="OS/161 - A First Glance"><meta itemprop=description content="The OS/161 Kit  OS/161 System/161 Development Tools  OS/161 OS/161 is the kernel and software suite that is developed on for this course."><meta itemprop=datePublished content=2020-02-19T17:35:55&#43;11:00><meta itemprop=dateModified content=2020-02-19T17:35:55&#43;11:00><meta itemprop=wordCount content=467><meta itemprop=keywords content><meta name=twitter:card content=summary><meta name=twitter:title content="OS/161 - A First Glance"><meta name=twitter:description content="The OS/161 Kit  OS/161 System/161 Development Tools  OS/161 OS/161 is the kernel and software suite that is developed on for this course."><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=../../ class=logo>COMP3231 Musings</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=../../><li class=mobile-menu-item>Home</li></a><a href=https://github.com/featherbear/UNSW-COMP3231><li class=mobile-menu-item>GitHub</li></a><a href=../../categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=../../ class=logo>COMP3231 Musings</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=../../>Home</a></li><li class=menu-item><a class=menu-item-link href=https://github.com/featherbear/UNSW-COMP3231>GitHub</a></li><li class=menu-item><a class=menu-item-link href=../../categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>OS/161 - A First Glance</h1><div class=post-meta><span class=post-time>2020-02-19</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#the-os-161-kit>The OS/161 Kit</a><ul><li><a href=#os-161>OS/161</a></li><li><a href=#system-161>System/161</a></li><li><a href=#development-tools>Development Tools</a></li></ul></li><li><a href=#installation>Installation</a><ul><li><a href=#os-161-utilities>OS/161 Utilities</a></li><li><a href=#os161-gdb>os161-gdb</a></li><li><a href=#libmpfr4>libmpfr4</a></li><li><a href=#bmake>bmake</a></li><li><a href=#ncurses>ncurses</a></li></ul></li></ul></nav></div></div><div class=post-content><h1 id=the-os-161-kit>The OS/161 Kit</h1><ul><li>OS/161</li><li>System/161</li><li>Development Tools</li></ul><h2 id=os-161>OS/161</h2><p>OS/161 is the kernel and software suite that is developed on for this course.</p><h2 id=system-161>System/161</h2><p>System/161 is a simulated MIPS system that the OS/161 operating system runs on. It emulates a MIPS R2000/R3000 CPU.</p><h2 id=development-tools>Development Tools</h2><ul><li><code>bmake</code> - <code>make</code> for os161</li><li><code>os161-gcc</code> - Compiles files to a MIPS binary format</li><li><code>os161-*</code> - Other OS/161 related tools</li></ul><hr><h1 id=installation>Installation</h1><p><s>At the time of writing this (February 19th 5:35PM), the course&rsquo;s personal development environment install guide wasn&rsquo;t accessible.</s> EDIT: Nevermind, I had to log in&hellip; aha&hellip;.</p><p>0) Create support directory</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span></pre></td><td class=lntd><pre class=chroma>mkdir -p ~/cs3231/root</pre></td></tr></table></div></div><p>1) Install the build toolchain</p><p>We need a few things to compile the software.<br>What you may need will depend on what you already have on your machine.</p><h2 id=os-161-utilities>OS/161 Utilities</h2><p>These contain the <code>os161-</code> prefixed compiler tools</p><p><details><summary>If you care to know which ones&hellip;</summary></p><ul><li>os161-addr2line</li><li>os161-ar</li><li>os161-as</li><li>os161-c++filt</li><li>os161-cpp</li><li>os161-elfedit</li><li>os161-gcc</li><li>os161-gcc-4.8.3</li><li>os161-gcc-ar</li><li>os161-gcc-nm</li><li>os161-gcc-ranlib</li><li>os161-gcov</li><li>os161-gdb</li><li>os161-ld</li><li>os161-ld.bfd</li><li>os161-nm</li><li>os161-objcopy</li><li>os161-objdump</li><li>os161-ranlib</li><li>os161-readelf</li><li>os161-run</li><li>os161-size</li><li>os161-strings</li><li>os161-strip</li></ul><p></details></p><p>File: <a href=http://www.cse.unsw.edu.au/~cs3231/os161-files/os161-utils_2.0.8.deb>os161-utils_2.0.8.deb</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>andrew ::  sudo dpkg -i os161-utils_2.0.8.deb 
+          Selecting previously unselected package os161-utils.
+          <span class=o>(</span>Reading database ... <span class=m>222960</span> files and directories currently installed.<span class=o>)</span>
+          Preparing to unpack os161-utils_2.0.8.deb ...
+          Unpacking os161-utils <span class=o>(</span><span class=m>2</span>.0.8<span class=o>)</span> ...
+          Setting up os161-utils <span class=o>(</span><span class=m>2</span>.0.8<span class=o>)</span> ...
+          Processing triggers <span class=k>for</span> man-db <span class=o>(</span><span class=m>2</span>.8.7-3<span class=o>)</span> ...</code></pre></td></tr></table></div></div><h2 id=os161-gdb>os161-gdb</h2><p>Create shortcut <code>.gdbinit</code> file</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></pre></td><td class=lntd><pre class=chroma>cat &gt; ~/cs3231/root/.gdbinit &lt;&lt; :EOF
+set can-use-hw-watchpoints 0
+define connect
+dir ~/cs3231/asst0-src/kern/compile/ASST0
+target remote unix:.sockets/gdb
+b panic
+end
+:EOF
+
+echo &#34;set auto-load safe-path /&#34; &gt;&gt; ~/.gdbinit</pre></td></tr></table></div></div><h2 id=libmpfr4>libmpfr4</h2><p>Getting this error during compilation?<br><strong>error while loading shared libraries: libmpfr.so.4: cannot open shared object file: No such file or directory</strong></p><blockquote><p><em>MPFR provides a library for multiple-precision floating-point computation with correct rounding. The computation is both efficient and has a well-defined semantics. It copies the good ideas from the ANSI/IEEE-754 standard for double-precision floating-point arithmetic (53-bit mantissa).</em></p></blockquote><p>My Ubuntu 19.10 installation doesn&rsquo;t have the <code>libmpfr4</code> package available in its APT repository anymore, so I had to make a dirty hack to link the somewhat-backwards-compatible newer version to the old version.</p><p><code>sudo ln -s /usr/lib/x86_64-linux-gnu/libmpfr.so.6 /usr/lib/x86_64-linux-gnu/libmpfr.so.4</code></p><p>// TODO Make better?</p><h2 id=bmake>bmake</h2><p><code>sudo apt install bmake</code></p><h2 id=ncurses>ncurses</h2><p><code>sudo apt install libncurses5</code></p><p>2) Get the source code</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span></pre></td><td class=lntd><pre class=chroma>cd ~/cs3231
+git clone https://z8888888@gitlab.cse.unsw.EDU.AU/COMP3231/20T1/z8888888-asst0.git asst0-src</pre></td></tr></table></div></div><p>(Replacing 8888888 with your zID)</p><p>3) Configure</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span></pre></td><td class=lntd><pre class=chroma>cd asst0-src
+./configure</pre></td></tr></table></div></div><p>4) (B)Make</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span></pre></td><td class=lntd><pre class=chroma>bmake</pre></td></tr></table></div></div><p>5) Install</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span></pre></td><td class=lntd><pre class=chroma>bmake install</pre></td></tr></table></div></div><p>6) Build the OS/161 Kernel</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></pre></td><td class=lntd><pre class=chroma>cd ~/cs3231/asst0-src/kern/conf
+./config ASST0
+
+cd ../compile/ASST0
+bmake depend
+bmake
+bmake install</pre></td></tr></table></div></div><p>7) Create a rebuild script</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></pre></td><td class=lntd><pre class=chroma>cat &gt; ~/cs3231/asst0-src/rebuild.sh &lt;&lt; :EOF
+<span class=c1>#!/bin/bash</span>
+<span class=nb>cd</span> <span class=s2>&#34;</span><span class=k>$(</span>dirname <span class=s2>&#34;</span><span class=nv>$0</span><span class=s2>&#34;</span><span class=k>)</span><span class=s2>&#34;</span>
+<span class=nb>cd</span> kern/compile/ASST0
+<span class=nb>echo</span> <span class=s2>&#34;Building...&#34;</span>
+bmake <span class=o>&amp;&amp;</span> bmake install
+:EOF
+
+chmod a+x rebuild.sh</pre></td></tr></table></div></div><p>Now we can rebuild easily with <code>./rebuild</code>!</p></div><footer class=post-footer><nav class=post-nav><a class=prev href=../../post/processes-and-threads/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Processes and Threads</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=../../post/assignment-0/><span class="next-text nav-default">Assignment 0</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:z5206677@student.unsw.edu.au class="iconfont icon-email" title=email></a><a href=https://www.linkedin.com/in/andrewjinmengwong/ class="iconfont icon-linkedin" title=linkedin></a><a href=https://github.com/featherbear class="iconfont icon-github" title=github></a><a href=https://www.instagram.com/_andrewjwong/ class="iconfont icon-instagram" title=instagram></a><a href=../../index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2020
+<span class=heart><i class="iconfont icon-heart"></i></span><span class=author>Andrew Wong (z5206677)</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=../../dist/even.26188efa.min.js></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-107434487-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script src=../../js/typed.js@2.0.9></script><script src=../../js/typedjs.shortcode.js></script></body></html>
