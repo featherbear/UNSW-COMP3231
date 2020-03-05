@@ -15,6 +15,19 @@ sequenceDiagrams:
 
 ---
 
+
+// req -> block until available -> release resource
+
+* Preemptable resources
+  * Can be taken away from a process without ill effects
+* Nonpreemptable resources
+  * Cause process failure if taken away
+
+Deadlock occurs when two mutually exclusive resources are both occupied at the same time.  
+ie devices, locks, tables, etc, ...
+
+---
+
 # Conditions for Deadlock
 
 All four must be true for deadlock to occur
@@ -49,7 +62,7 @@ Circular flow = dead lock
 * Detection and Recovery - Alllocation matrix; request matrix
 
 Resources in existence -> Vector E_n -> n number of resources
-Reosurces available -> Bector A_n
+Resources available -> Vector A_n
 
 
 Each row is a process
