@@ -123,5 +123,22 @@ Blocked: Busy (waiting for a syscall to be fulfilled)
 
 > Is it better for multiple processes, or multiple threads?
 
-Threads > Processes
+Threads > Processes!??!?!
 
+[Read more](../thread-model)
+
+# Related Metadata
+
+* Address space
+* Global variables
+* Open files
+* Child processes
+* Pending alarms
+* Signals
+* Signal Handlers
+* Accounting information
+
+* Program Counter
+* Registers
+* Stack
+* State
