@@ -1,5 +1,5 @@
 ---
-title: "Tutorial 2"
+title: "Tutorial Week 2"
 date: 2020-02-24T16:09:20+11:00
 
 hiddenFromHomePage: false
