@@ -256,7 +256,6 @@ Found in `asst2-src/kern/arch/mips/include/trapframe.h`
 
 # Design Questions / Considerations
 
-
 ## What is the difference between UIO_USERISPACE and UIO_USERSPACE?
 
 * `UIO_USERISPACE` - User Code
@@ -265,50 +264,3 @@ Found in `asst2-src/kern/arch/mips/include/trapframe.h`
 ## When should one use UIO_SYSSPACE instead?
 
 Kernel related stuff. Doesn't require validity checks - as the kernel is trusted to be safe.
-
-
-
-
----
-
-## Conventions
-
-* In-kernel system call names should be prefixed with `sys_`
-
-## What data structures are private to each process? Which ones are shared (also think of concurrency issues)?
-
-Refer to [Structures](#structures)
-
-## What primitive operations exist to support the transfer of data to and from kernel space? Do you want to implement more on top of these?
-
-## How you will keep track of open files? For which system calls is this useful?
-
-
-
-# Implementation Details
-
-## Structures
-
-### File descriptor map
-
-### Process information map
-
-* pid
-* cwd
-* time
-* pointers, registers
-* arguments
-
-
-## open
-
-
-## read
-
-## write
-
-## lseek
-
-## close
-
-## dup2
