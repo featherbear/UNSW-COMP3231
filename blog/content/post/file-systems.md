@@ -198,7 +198,15 @@ Keeps a map of the entire file system in a separate table.
 
 ##### inode-based structure
 
-Separate table (index-node / i-node) for each file.
+Separate table (index-node / inode) for each file.
+
+* Each file is represented by an inode on the disk
+* inodes have unique numbers
+* They contain file metadata
+  * Access rights
+  * Owner
+  * Accounting information
+* Directories map file names to inode numbers
 
 * Only the table for the relevant file needs to be kept in memory
 * Fast random access
