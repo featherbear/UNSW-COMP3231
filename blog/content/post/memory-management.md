@@ -84,19 +84,24 @@ When the RAM is full, and more memory is needed, the computer can use space on s
 
 Regardless, it allows for the memory of inactive processes to be stored off-RAM, to create more space for new/active processes that request for memory.
 
-# Memory Address Binds
+# Types Memory Address Binds
 
-## During Compile/Link time
+## Compile/Link Time
 
-The entrypoint location of the program needs to be known at compile-time. When this entrypoint changes, the program needs to be recompiled
+HARDCODED ADDRESSES.
+
+The entrypoint location of the program needs to be known at compile-time.  
+When this entrypoint changes, the program needs to be recompiled
 
 ## During Load/Object time
 
-The compiler generates relocatable code
+The compiler generates relocatable code.  
+When run, the program is loaded into memory, and the addresses are modified to suit the current memory space.  
+The modified addresses are then overwritten into the memory, then the application is launched.
 
 ## Run time
 
-Logical addresses are translated to physical addresses
+Logical addresses are translated to physical addresses via virtual memory.
 
 # Compaction
 
