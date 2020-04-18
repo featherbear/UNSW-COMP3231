@@ -65,6 +65,8 @@ _Note: You may use a fixed-size stack region (say 16 pages) for each process._
 
 # Address Translation
 
+![](Screenshot from 2020-04-15 18-45-38.png)
+
 The main goal for this assignment is to provide virtual memory translation for user programs.  
 To do this, you will need to implement a ***TLB refill handler***. You will also need to implement a ***page table***.  
 For this assignment, you will implement a 2-level hierarchical page table.
