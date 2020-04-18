@@ -1,3 +1,16 @@
 [submodule "blog/themes/hugo-theme-even"]
 	path = blog/themes/hugo-theme-even
 	url = https://github.com/olOwOlo/hugo-theme-even/
+[submodule "assignment/ass0"]
+        path = assignment/ass0
+        url = https://github.com/featherbear/UNSW-COMP3231-ass0
+[submodule "assignment/ass1"]
+	path = assignment/ass1
+	url = https://github.com/featherbear/UNSW-COMP3231-ass1
+[submodule "assignment/ass2"]
+	path = assignment/ass2
+	url = https://github.com/featherbear/UNSW-COMP3231-ass2
+[submodule "assignment/ass3"]
+	path = assignment/ass3
+	url = https://github.com/featherbear/UNSW-COMP3231-ass3
+
