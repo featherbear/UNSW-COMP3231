@@ -173,3 +173,10 @@ Clear the TLB in as_activate() and as_deactivate()
   * Write fault address into the 10 MSB of entryHi
   * Write physical address into the 10 MSB of entryLo
   * Write Dirty and Valid bits into entryLo according to [this table](#linux-file-permission-to-page-table-bits)
+
+# Tests (Click image to zoom)
+
+|`/bin/true`|`/testbin/faulter`|`/testbin/crash`|`/testbin/huge`|`/testbin/triplehuge`|`/testbin/parallelvm`|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|![](Snipaste_2020-04-26_16-29-22.png)|![](Snipaste_2020-04-26_16-24-33.png)|![](Snipaste_2020-04-26_16-25-18.png)|![](Snipaste_2020-04-26_16-29-47.png)|![](Snipaste_2020-04-26_16-30-08.png)|![](Snipaste_2020-04-26_16-26-08.png)|
+
