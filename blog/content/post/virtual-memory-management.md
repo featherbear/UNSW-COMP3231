@@ -1,4 +1,4 @@
-s---
+---
 title: "Virtual Memory Management"
 date: 2020-04-30T21:01:15+10:00
 
@@ -6,13 +6,12 @@ hiddenFromHomePage: false
 postMetaInFooter: false
 
 flowchartDiagrams:
-enable: false
-options: ""
+  enable: false
+  options: ""
 
 sequenceDiagrams:
-enable: false
-options: ""
-
+  enable: false
+  options: ""
 ---
 
 # Segmentation / On-Demand Paging
