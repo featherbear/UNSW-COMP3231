@@ -30,11 +30,11 @@ It can be used as an approximation for the measure of a program's locality.
 
 This working set is roughly the amount of pages that a system should keep in its memory at minimum.
 
-## Trashing
+## Thrashing
 
 ![](Screenshot from 2020-04-30 20-58-26.png)
 
-Trashing is the occurrence where processes are unable to run due to a lack of available resources
+Thrashing is the occurrence where processes are unable to run due to a lack of available resources
 
 - CPU utilisation often as more processes are run.
 - The more processes there are running, the less memory there is available for each process.

@@ -53,15 +53,15 @@ Circular flow = dead lock
 * Ignore
   * Reasonable if deadlocks occur very rarely
 * Prevention - Negate one of the four required conditions
-  * Mutex - Not always feasible to implement a non-mutual exclusive resource system
-  * Hold and Wait - Not all required resources may be known at program start
-                  - Release all resources if one resource is unavailable; then try again
-                    - Livelock -> Unblocked but no progress making - ie people walking opposite me
-  * Preemption - Not feasible, might break something
-  * Circular wait - Resource queue - Fetch resources in ascending order
+  * Remove Mutex conditition - Not always feasible to implement a non-mutual exclusive resource system
+  * Remove Hold and Wait condition - Not all required resources may be known at program start
+    - Release all resources if one resource is unavailable; then try again
+      - Livelock -> Unblocked but no progress making - ie people walking opposite me
+  * Allow Preemption - Not feasible, might break something
+  * Remove Circular Wait pattern - Resource queue - Fetch resources in ascending order
 * Detection and Recovery - Alllocation matrix; request matrix
 
-Resources in existence -> Vector E_n -> n number of resources
+Resources in existence -> Vector E_n -> n number of resources  
 Resources available -> Vector A_n
 
 
