@@ -30,7 +30,7 @@ semaphore empty = N;
 // Full slots
 semaphore full = 0;
 
-/* Separate semaphore for empty and full, to cater for multiple producers and/or multiple consumers</pre></td></tr></table></div></div><ul><li>Must <code>signal</code> for every <code>wait</code><ul><li>Easy to make mistakes, hard to detect</li></ul></li></ul><h1 id=monitors>Monitors</h1><ul><li>High-level synchronisation primitive</li><li>&ldquo;Class&rdquo; wrapper over a function which guarantees execution mutex</li><li><p>Any requested thread/function is placed into a queue, so only one can executate at a given time</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+/* Separate semaphore for empty and full, to cater for multiple producers and/or multiple consumers</pre></td></tr></table></div></div><ul><li>Must <code>signal</code> for every <code>wait</code><ul><li>Easy to make mistakes, hard to detect</li></ul></li></ul><h1 id=monitors>Monitors</h1><ul><li>High-level synchronisation primitive</li><li>&quot;Class&quot; wrapper over a function which guarantees execution mutex</li><li><p>Any requested thread/function is placed into a queue, so only one can executate at a given time</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span></pre></td><td class=lntd><pre class=chroma>condition x, y;
