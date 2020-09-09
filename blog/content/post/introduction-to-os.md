@@ -23,7 +23,7 @@ sequenceDiagrams:
 * Hides details of the hardware
 * Provides a high-level abstraction of the system to the developer (common framework)
 
-## A resource nanager
+## A resource manager
 
 * Allocates resources (CPU time, memory, etc) to users and processes (Depending on policy)
 * Ensures no starvation occurs, and that progress is made
