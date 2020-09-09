@@ -19,7 +19,7 @@ A processor can only run one thing at a time. This include the OS itself.
 When an application is running, the operating system itself is paused. However this does not feel apparent as regular interrupts (i.e. timers, interrupts) give control back to the OS.
 
 * A **process** / task / job is the execution of an individual program. It owns the allocated resources
-* A **thread** is a unit of execution which belongs to a proces. They can be traced (List of executed instructions)
+* A **thread** is a unit of execution which belongs to a process. They can be traced (List of executed instructions)
 
 _Structure_
 
